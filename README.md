@@ -1,8 +1,7 @@
 # tweetapp
 
-TweetApp Fetches your Twitter feed and displays it in a Whatsapp like UI
-Requires Twitter API access
-[Backend](https://github.com/LunaticHacker/tweet-app-backend)
+TweetApp Fetches your Twitter feed and displays it in a Whatsapp like UI<br>Requires Twitter API access<br>
+[Backend Repo](https://github.com/LunaticHacker/tweet-app-backend)
 
 ![screenshot](./screencaps/screencap.png)
 

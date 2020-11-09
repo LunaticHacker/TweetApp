@@ -1,5 +1,9 @@
 # tweetapp
 
+TweetApp Fetches your Twitter feed and displays it in a Whatsapp like UI
+Requires Twitter API access 
+[Backend](https://github.com/LunaticHacker/tweet-app-backend)
+
 ## Project setup
 ```
 yarn install

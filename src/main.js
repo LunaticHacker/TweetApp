@@ -7,10 +7,14 @@ const app = createApp(App);
 const store = createStore({
   state: {
     chats: {},
+    currentName: "",
   },
   mutations: {
     setChats(state, payload) {
       state.chats = payload;
+    },
+    setCurrentName(state, payload) {
+      state.currentName = payload;
     },
   },
   actions: {
@@ -21,6 +25,10 @@ const store = createStore({
   },
   getters: {
     getChats: (state) => state.chats,
+    getCurrentChats: (state) =>
+      state.chats[state.currentName]
+        ? state.chats[state.currentName].msgs.reverse()
+        : [],
   },
 });
 app.use(store);

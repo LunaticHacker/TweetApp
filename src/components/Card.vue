@@ -19,6 +19,7 @@ export default {
 <style scoped>
 .card {
   display: flex;
+  border-bottom: 1px solid black;
 }
 .card:hover
 {

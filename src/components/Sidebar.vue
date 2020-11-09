@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar">
     
-    <Card v-for="(chat,name) in chats" :key="name" :name="name" :dp="chat.dp"/>
+    <Card v-for="(chat,name) in chats" :key="name" :name="name" :dp="chat.dp" @click="setChat(name)"/>
   </div>
 </template>
 
@@ -15,6 +15,12 @@ export default {
   computed:
   {
     chats(){return this.$store.getters.getChats}
+  },
+   methods:{
+    setChat(name)
+    {
+      this.$store.commit("setCurrentName",name)
+    }
   }
  
 

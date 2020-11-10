@@ -46,6 +46,7 @@ export default {
 .badge{
     border-radius: 50%;
     background-color: #25D366;
+    color: white;
     height:2.5em;
     width:2.5em;
     margin-top: 2em;

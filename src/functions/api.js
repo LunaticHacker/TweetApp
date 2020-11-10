@@ -8,7 +8,8 @@ async function getFeed() {
     if (!chats[user.name]) {
       chats[user.name] = {};
       chats[user.name].msgs = [];
-      chats[user.name].dp = user.profile_image_url.slice(0, -11) + ".jpg";
+      const ft = user.profile_image_url.slice(-3);
+      chats[user.name].dp = user.profile_image_url.slice(0, -11) + `.${ft}`;
       chats[user.name].msgs.push({
         text: item.text,
         media: item.entities.media ? item.entities.media[0].media_url : [],

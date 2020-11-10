@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar">
     
-    <Card v-for="(chat,name) in chats" :key="name" :name="name" :dp="chat.dp" @click="setChat(name)"/>
+    <Card v-for="(chat,name) in chats" :key="name" :name="name" :len="chat.msgs.length" :dp="chat.dp" @click="setChat(name)"/>
   </div>
 </template>
 

@@ -11,16 +11,24 @@ async function getFeed() {
       const ft = user.profile_image_url.slice(-3);
       chats[user.name].dp = user.profile_image_url.slice(0, -11) + `.${ft}`;
       chats[user.name].msgs.push({
-        text: item.text,
-        media: item.entities.media ? item.entities.media[0].media_url : [],
+        text: `${linkify(item.text)} <img src="${
+          item.entities.media ? item.entities.media[0].media_url : ""
+        }">`,
       });
     } else {
       chats[user.name].msgs.push({
-        text: item.text,
-        media: item.entities.media ? item.entities.media[0].media_url : [],
+        text: `${linkify(item.text)} <img src="${
+          item.entities.media ? item.entities.media[0].media_url : ""
+        }">`,
       });
     }
   }
   return chats;
+}
+function linkify(text) {
+  const urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#/%?=~_|!:,.;]*[-A-Z0-9+&@#/%=~_|])/gi;
+  return text.replace(urlRegex, function(url) {
+    return '<a href="' + url + '">' + url + "</a>";
+  });
 }
 export { getFeed };

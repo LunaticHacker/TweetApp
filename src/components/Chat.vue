@@ -1,7 +1,6 @@
 <template>
   <div class="chat">
-    <div class="message" v-for="chat in currentChat" :key="chat">{{chat.text}}
-      <div> <img :src="chat.media"/></div>
+    <div class="message" v-for="chat in currentChat" :key="chat" v-html="chat.text">
     </div>
     
   </div>

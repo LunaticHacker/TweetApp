@@ -29,6 +29,10 @@ const store = createStore({
       state.chats[state.currentName]
         ? state.chats[state.currentName].msgs.reverse()
         : [],
+    getInfo: (state) =>
+      state.chats[state.currentName]
+        ? { dp: state.chats[state.currentName].dp, name: state.currentName }
+        : {},
   },
 });
 app.use(store);

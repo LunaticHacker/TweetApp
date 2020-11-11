@@ -1,5 +1,6 @@
 <template>
   <div class="chat">
+    <Header/>
     <div class="message" v-for="chat in currentChat" :key="chat" v-html="chat.text">
     </div>
     
@@ -7,11 +8,14 @@
 </template>
 
 <script>
+import Header from "./Header.vue"
 export default {
   computed:
   {
     currentChat(){return this.$store.getters.getCurrentChats}
-  }
+  },
+  components:{Header}
+  
  
 
 }

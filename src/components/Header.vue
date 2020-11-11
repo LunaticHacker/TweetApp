@@ -22,8 +22,6 @@ export default {
 {
     width:100%;
     height:4em;
-    position: sticky;
-    top: 0;
     background:#075E54;
 }
 .name

@@ -19,7 +19,7 @@ export default {
    methods:{
     setChat(name)
     {
-      document.getElementById(name).children[2].remove()
+      if( document.getElementById(name).children[2])document.getElementById(name).children[2].remove()
       this.$store.commit("setCurrentName",name)
     }
   }

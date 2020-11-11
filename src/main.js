@@ -27,7 +27,8 @@ const store = createStore({
     getChats: (state) => state.chats,
     getCurrentChats: (state) =>
       state.chats[state.currentName]
-        ? state.chats[state.currentName].msgs.reverse()
+        ? //using slice to prevent modifying the original array
+          state.chats[state.currentName].msgs.slice().reverse()
         : [],
     getInfo: (state) =>
       state.chats[state.currentName]

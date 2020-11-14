@@ -8,28 +8,16 @@ async function getFeed() {
     if (!chats[user.name]) {
       chats[user.name] = {};
       chats[user.name].msgs = [];
-      const ft = user.profile_image_url.slice(-3);
-      chats[user.name].dp = user.profile_image_url.slice(0, -11) + `.${ft}`;
-      chats[user.name].msgs.push({
-        text: `${linkify(
-          item.retweeted_status
-            ? item.retweeted_status.full_text
-            : item.full_text
-        )} <img src="${
-          item.entities.media ? item.entities.media[0].media_url : ""
-        }">`,
-      });
-    } else {
-      chats[user.name].msgs.push({
-        text: `${linkify(
-          item.retweeted_status
-            ? item.retweeted_status.full_text
-            : item.full_text
-        )} <img src="${
-          item.entities.media ? item.entities.media[0].media_url : ""
-        }">`,
-      });
     }
+    const ft = user.profile_image_url.slice(-3);
+    chats[user.name].dp = user.profile_image_url.slice(0, -11) + `.${ft}`;
+    chats[user.name].msgs.push({
+      text: `${linkify(
+        item.retweeted_status ? item.retweeted_status.full_text : item.full_text
+      )} <img src="${
+        item.entities.media ? item.entities.media[0].media_url : ""
+      }">`,
+    });
   }
   return chats;
 }
